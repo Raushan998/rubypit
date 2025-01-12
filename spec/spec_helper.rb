@@ -12,4 +12,12 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.before(:each) do
+    FileUtils.rm_rf(Dir["#{Dir.pwd}/test_*"])
+  end
+
+  config.after(:each) do
+    FileUtils.rm_rf(Dir["#{Dir.pwd}/test_*"])
+  end
 end

@@ -1,10 +1,8 @@
-# frozen_string_literal: true
-
 require "sequel"
 require "yaml"
 require "erb"
 
-module RubyPit
+module Rubypit
   module Config
     module Database
       class << self
@@ -17,7 +15,7 @@ module RubyPit
           self.connection = Sequel.connect(config)
           setup_connection_pool
           connection
-        end
+        end 
 
         def connected?
           !connection.nil? && !connection.pool.disconnected?
@@ -51,7 +49,7 @@ module RubyPit
         end
 
         def setup_connection_pool
-          connection.pool.max_size = 5 # Adjust pool size as needed
+          connection.pool.max_size = 5
           connection.logger = RubyPit.logger if defined?(RubyPit.logger)
           connection.sql_log_level = :debug
         end

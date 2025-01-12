@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-
   pull_request:
 
 jobs:
@@ -23,5 +22,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Run the default task
-        run: bundle exec rake
+      - name: Install all the gems
+        run: bundle install
+      - name: Run the test
+        run: bundle exec rspec

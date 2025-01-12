@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require 'rubypit'
+
+# Your CLI logic here
+Rubypit::Cli.new(ARGV)

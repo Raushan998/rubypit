@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-
   pull_request:
 
 jobs:
@@ -23,7 +22,9 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
+      - name: Remove frozen Gemfile.lock mode
+        run: bundle config set frozen false
       - name: Install all the gems
-        run: bundle Install
+        run: bundle install
       - name: Run the test
         run: bundle exec rspec

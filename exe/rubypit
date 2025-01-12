@@ -2,4 +2,4 @@
 require 'rubypit'
 
 # Your CLI logic here
-Rubypit::Cli.new(ARGV)
+Rubypit::CLI.new(ARGV)

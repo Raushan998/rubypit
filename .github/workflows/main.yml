@@ -22,9 +22,7 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Remove frozen Gemfile.lock mode
-        run: bundle config set frozen false
       - name: Install all the gems
-        run: bundle install --jobs 4 --retry 3
+        run: bundle install --jobs 4 --retry 3 --without development test
       - name: Run the test
         run: bundle exec rspec

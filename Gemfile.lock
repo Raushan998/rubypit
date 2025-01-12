@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubypit (0.2.1)
+    rubypit (0.2.2)
       sequel (~> 5.0)
 
 GEM
@@ -57,6 +57,7 @@ GEM
 PLATFORMS
   arm64-darwin-23
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   fileutils

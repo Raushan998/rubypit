@@ -2,7 +2,7 @@ require 'thor'
 require 'fileutils'
 
 module RubyPit
-  class CLI < Thor
+  class Cli < Thor
     desc "create_project NAME", "Create a new RubyPit project"
     def create_project(name)
       generator = ProjectGenerator.new(name)

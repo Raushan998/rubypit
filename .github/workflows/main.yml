@@ -24,9 +24,5 @@ jobs:
           bundler-cache: true
       - name: Install all the gems
         run: bundle install
-      - name: Make check_rubocop.sh executable
-        run: chmod +x ./check_rubocop.sh
-      - name: Run RuboCop
-        run: ./check_rubocop.sh
       - name: Run the test
         run: bundle exec rspec

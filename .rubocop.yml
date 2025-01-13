@@ -1,8 +1,19 @@
+# .rubocop.yml
 AllCops:
-  TargetRubyVersion: 3.0
+  Exclude:
+    - 'vendor/**/*'
+    - '.bundle/**/*'
+    - 'vendor/bundle/**/*'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'bin/*'
+    - 'exe/*'
+
+Style/Documentation:
+  Enabled: false
 
 Style/StringLiterals:
-  EnforcedStyle: double_quotes
+  Enabled: false
 
 Style/StringLiteralsInInterpolation:
-  EnforcedStyle: double_quotes
+  Enabled: false

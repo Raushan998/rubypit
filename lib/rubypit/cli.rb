@@ -1,5 +1,7 @@
-require 'thor'
-require 'fileutils'
+# frozen_string_literal: true
+
+require "thor"
+require "fileutils"
 
 module Rubypit
   class CLI < Thor
@@ -29,28 +31,28 @@ module Rubypit
 
     def create_project_directory
       FileUtils.mkdir_p(project_path)
-      FileUtils.mkdir_p(File.join(project_path, 'app'))
-      FileUtils.mkdir_p(File.join(project_path, 'app', 'models'))
+      FileUtils.mkdir_p(File.join(project_path, "app"))
+      FileUtils.mkdir_p(File.join(project_path, "app", "models"))
     end
 
     def create_config_directory
-      FileUtils.mkdir_p(File.join(project_path, 'config'))
+      FileUtils.mkdir_p(File.join(project_path, "config"))
     end
 
     def create_database_config
-      File.open(File.join(project_path, 'config', 'database.rb'), 'w') do |file|
+      File.open(File.join(project_path, "config", "database.rb"), "w") do |file|
         file.write(database_config_template)
       end
     end
 
     def create_gitignore
-      File.open(File.join(project_path, '.gitignore'), 'w') do |file|
+      File.open(File.join(project_path, ".gitignore"), "w") do |file|
         file.write(gitignore_template)
       end
     end
 
     def create_gemfile
-      File.open(File.join(project_path, 'Gemfile'), 'w') do |file|
+      File.open(File.join(project_path, "Gemfile"), "w") do |file|
         file.write(gemfile_template)
       end
     end
@@ -70,7 +72,7 @@ module Rubypit
             password: 'password',
             port: 5432
           },
-          
+        #{"  "}
           test: {
             adapter: 'postgres',
             host: 'localhost',
@@ -79,7 +81,7 @@ module Rubypit
             password: 'password',
             port: 5432
           },
-          
+        #{"  "}
           production: {
             adapter: 'postgres',
             host: ENV['DB_HOST'],

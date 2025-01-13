@@ -17,3 +17,6 @@ Layout/LineLength:
 
 Lint/DuplicateRequire:
   Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false

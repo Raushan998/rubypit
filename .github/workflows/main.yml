@@ -25,6 +25,6 @@ jobs:
       - name: Install all the gems
         run: bundle install
       - name: Run RuboCop
-        run: ./check_rubocop.sh
+        run: check_rubocop.sh
       - name: Run the test
         run: bundle exec rspec

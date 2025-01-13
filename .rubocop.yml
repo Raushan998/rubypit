@@ -11,3 +11,9 @@ Style/StringLiteralsInInterpolation:
 
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Lint/DuplicateRequire:
+  Enabled: false

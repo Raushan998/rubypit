@@ -4,6 +4,10 @@ AllCops:
     - 'vendor/**/*'
     - '.bundle/**/*'
     - 'vendor/bundle/**/*'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'bin/*'
+    - 'exe/*'
 
 Style/Documentation:
   Enabled: false

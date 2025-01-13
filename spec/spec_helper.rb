@@ -20,4 +20,8 @@ RSpec.configure do |config|
   config.after(:each) do
     FileUtils.rm_rf(Dir["#{Dir.pwd}/test_*"])
   end
+
+  config.before(:each) do
+    Rubypit::Config::Database.connection = nil
+  end
 end

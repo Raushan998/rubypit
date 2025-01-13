@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "sequel"
 require "yaml"
 require "erb"
@@ -15,7 +17,7 @@ module Rubypit
           self.connection = Sequel.connect(config)
           setup_connection_pool
           connection
-        end 
+        end
 
         def connected?
           !connection.nil? && !connection.pool.disconnected?
@@ -27,7 +29,6 @@ module Rubypit
           config_file = find_database_config
           yaml = ERB.new(File.read(config_file)).result
           config = YAML.safe_load(yaml)[environment]
-
 
           config.transform_keys(&:to_sym)
         end

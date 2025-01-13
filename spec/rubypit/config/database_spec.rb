@@ -1,14 +1,9 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength Layout/LeadingCommentSpace Layout/EmptyLineAfterMagicComment
 require "sequel"
 require "yaml"
 require "erb"
-
-RSpec.configure do |config|
-  config.before(:each) do
-    Rubypit::Config::Database.connection = nil
-  end
-end
 
 RSpec.describe Rubypit::Config::Database do
   let(:test_config) do
@@ -186,3 +181,4 @@ RSpec.describe Rubypit::Config::Database do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength Layout/LeadingCommentSpace Layout/EmptyLineAfterMagicComment

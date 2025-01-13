@@ -2,6 +2,7 @@
 AllCops:
   Exclude:
     - 'vendor/**/*'
+    -  '.bundle/**/*'
 
 Style/Documentation:
   Enabled: false
